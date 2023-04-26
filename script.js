@@ -24,4 +24,10 @@ const Gameboard = () => {
 
   const playerOne = Player(playerOneName, "O");
   const playerTwo = Player(playerTwoName, "X");
+
+  for (let i = 0; i < gameBoard.length; i++) {
+    const cell = document.querySelector(`#cell-${i}`);
+    cell.textContent = gameBoard[i];
+  }
+
 };
