@@ -1,8 +1,10 @@
 const startScreen = document.querySelector(".start-screen");
+const gameBoardScreen = document.querySelector(".game-board");
 const startForm = document.querySelector("form");
 startForm.addEventListener("submit", function (event) {
   event.preventDefault();
   startScreen.style.display = "none";
+  gameBoardScreen.style.display = "flex";
 });
 
 const Player = (name, mark) => {
@@ -29,5 +31,4 @@ const Gameboard = () => {
     const cell = document.querySelector(`#cell-${i}`);
     cell.textContent = gameBoard[i];
   }
-
 };

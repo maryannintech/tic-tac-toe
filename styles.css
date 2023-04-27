@@ -24,7 +24,6 @@ header {
   gap: 20px;
   padding: 10px;
   text-align: center;
-  display: none;
 }
 
 form {
@@ -47,9 +46,9 @@ input:valid {
 }
 
 .game-board {
-  display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 table,
@@ -66,7 +65,7 @@ table {
 }
 
 td:hover {
-    background-color: gray;
+    background-color: rgb(190, 185, 185);
 }
 
 @keyframes wordAppear {
