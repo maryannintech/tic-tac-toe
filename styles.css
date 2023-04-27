@@ -49,6 +49,7 @@ input:valid {
   justify-content: center;
   align-items: center;
   display: none;
+  gap: 20px;
 }
 
 table,

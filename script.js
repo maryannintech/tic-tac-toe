@@ -5,10 +5,13 @@ startForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const playerOneName = document.querySelector("#player1name").value;
   const playerTwoName = document.querySelector("#player2name").value;
-  const playerOneMark = "O";
-  const playerTwoMark = "X";
-  const playerOne = Player(playerOneName, playerOneMark);
-  const playerTwo = Player(playerTwoName, playerTwoMark);
+  const playerOneScreen = document.querySelector(".player1-name");
+  const playerTwoScreen = document.querySelector(".player2-name");
+  playerOneScreen.textContent = playerOneName;
+  playerTwoScreen.textContent = playerTwoName;
+  const playerOne = Player(playerOneName, "O");
+  console.log(playerOne.getName(), playerOne.getMark());
+  const playerTwo = Player(playerTwoName, "X");
   startScreen.style.display = "none";
   gameBoardScreen.style.display = "flex";
   GameBoard(playerOne, playerTwo);
@@ -42,9 +45,11 @@ const GameBoard = (playerOne, playerTwo) => {
       cell.addEventListener("click", () => {
         if (gameBoard[index] === "") {
           gameBoard[index] = currentPlayer.getMark();
+          console.log(currentPlayer.getMark());
           renderGameBoard(gameBoard);
           currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
-          console.log(currentPlayer);
+          console.log(currentPlayer.getName(), currentPlayer.getMark());
+          switchTurn(currentPlayer, gameBoard);
         }
       });
     });
