@@ -1,6 +1,8 @@
+// dom elements
 const startScreen = document.querySelector(".start-screen");
 const gameBoardScreen = document.querySelector(".game-board");
 const startForm = document.querySelector("form");
+
 startForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const playerOneName = document.querySelector("#player1name").value;
@@ -9,11 +11,14 @@ startForm.addEventListener("submit", function (event) {
   const playerTwoScreen = document.querySelector(".player2-name");
   playerOneScreen.textContent = playerOneName;
   playerTwoScreen.textContent = playerTwoName;
+  startScreen.style.display = "none";
+  gameBoardScreen.style.display = "flex";
+
+  // send to Player 
   const playerOne = Player(playerOneName, "O");
   console.log(playerOne.getName(), playerOne.getMark());
   const playerTwo = Player(playerTwoName, "X");
-  startScreen.style.display = "none";
-  gameBoardScreen.style.display = "flex";
+  
   GameBoard(playerOne, playerTwo);
 });
 
@@ -49,7 +54,6 @@ const GameBoard = (playerOne, playerTwo) => {
           renderGameBoard(gameBoard);
           currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
           console.log(currentPlayer.getName(), currentPlayer.getMark());
-          switchTurn(currentPlayer, gameBoard);
         }
       });
     });
