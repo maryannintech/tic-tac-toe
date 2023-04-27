@@ -37,6 +37,11 @@ const GameBoard = (playerOne, playerTwo) => {
     });
   };
 
+  const checkWinner = (gameBoard) => {
+    // TODO: kung sino yung last na mark sila yung paano kaya icheck kung sino yung last mark na naka three lined
+    const winnerMessage = ``
+  };
+
   (function () {
     switchTurn(playerOne, gameBoard);
     switchTurn(playerTwo, gameBoard);
