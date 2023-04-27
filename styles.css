@@ -50,6 +50,7 @@ input:valid {
   align-items: center;
   display: none;
   gap: 20px;
+  margin: 15px;
 }
 
 table,
