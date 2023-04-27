@@ -65,4 +65,3 @@ startForm.addEventListener("submit", function (event) {
   GameBoard(playerOne, playerTwo);
 });
 
-GameBoard();
