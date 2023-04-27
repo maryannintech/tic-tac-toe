@@ -29,7 +29,9 @@ const GameBoard = (playerOne, playerTwo) => {
           console.log(currentPlayer.getMark());
           renderGameBoard(gameBoard);
           currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
+          // for debugging
           console.log(currentPlayer.getName(), currentPlayer.getMark());
+          console.log(gameBoard);
         }
       });
     });
@@ -57,11 +59,10 @@ startForm.addEventListener("submit", function (event) {
   startScreen.style.display = "none";
   gameBoardScreen.style.display = "flex";
 
-  // send to Player 
+  // send to Player
   const playerOne = Player(playerOneName, "O");
   console.log(playerOne.getName(), playerOne.getMark());
   const playerTwo = Player(playerTwoName, "X");
-  
+
   GameBoard(playerOne, playerTwo);
 });
-

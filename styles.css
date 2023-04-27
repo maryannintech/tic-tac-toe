@@ -5,8 +5,14 @@
   font-family: "Outfit", sans-serif;
 }
 
+:root {
+  --bg-body: #799698;
+  --paper-bg: #ededed;
+}
+
 body {
   margin: 0;
+  background-color: var(--bg-body);
 }
 
 header {
@@ -24,6 +30,13 @@ header {
   gap: 20px;
   padding: 10px;
   text-align: center;
+  background-color: var(--paper-bg);
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 form {
@@ -63,11 +76,11 @@ tr {
 }
 
 table {
-    border: none;
+  border: none;
 }
 
 td:hover {
-    background-color: rgb(190, 185, 185);
+  background-color: rgb(190, 185, 185);
 }
 
 .cell {
