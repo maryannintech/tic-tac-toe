@@ -68,6 +68,12 @@ td:hover {
     background-color: rgb(190, 185, 185);
 }
 
+.cell {
+  text-align: center;
+  font-size: 2rem;
+  padding: 0;
+}
+
 @keyframes wordAppear {
   0% {
     opacity: 0;
