@@ -8,10 +8,14 @@
 :root {
   --bg-body: #799698;
   --paper-bg: #ededed;
+  --hover-color: #d6d6d6;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.50);
+  --box-shadow-inset: inset 0 4px 6px rgba(0, 0, 0, 0.50);
 }
 
 .paper-bg {
   background-color: var(--paper-bg);
+  background-image: url(images/paper-texture.jpg);
   width: 300px;
   height: 400px;
   position: absolute;
@@ -19,6 +23,23 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
+}
+
+.holes {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: var(--bg-body);
+  border-radius: 50px;
+  box-shadow: var(--box-shadow-inset);
 }
 
 body {
@@ -35,7 +56,7 @@ header {
 
 header p {
   color: #fad643;
-  
+  font-weight: 600;
 }
 
 .start-screen {
@@ -46,12 +67,20 @@ header p {
   gap: 20px;
   padding: 10px;
   text-align: center;
+  box-shadow: var(--box-shadow);
+}
+
+.start-screen p {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin-bottom: 30px;
+  margin-top: 0;
 }
 
 input,
@@ -61,7 +90,7 @@ button {
   border: 1px solid black;
   cursor: pointer;
   padding: 5px;
-  background-color: #d6d6d6;
+  background-color: var(--hover-color);
 }
 
 button:hover {
@@ -85,7 +114,7 @@ input:valid {
 table,
 td,
 tr {
-  border: 2px solid black;
+  border: 1px solid black;
   width: 300px;
   height: 80px;
   border-radius: 10px;
@@ -96,13 +125,14 @@ table {
 }
 
 td:hover {
-  background-color: rgb(190, 185, 185);
+  background-color: var(--hover-color);
 }
 
 .cell {
   text-align: center;
   font-size: 1rem;
   padding: 5px;
+  font-weight: 600;
 }
 
 @keyframes wordAppear {
