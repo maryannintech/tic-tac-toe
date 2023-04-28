@@ -25,13 +25,18 @@
   border-radius: 10px;
 }
 
-.holes {
+.holes,
+.holes-board {
   display: flex;
   justify-content: center;
   gap: 40px;
   align-items: center;
   margin-bottom: 5px;
   margin-top: 10px;
+}
+
+.holes-board {
+  margin-top: 0;
 }
 
 .circle {
@@ -76,6 +81,10 @@ header p {
   font-size: 1.3rem;
 }
 
+main {
+  text-align: center;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -105,23 +114,32 @@ input:valid {
 .game-board {
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   display: none;
-  gap: 20px;
+  gap: 10px;
   margin: 15px;
-  padding: 20px;
+  padding: 10px;
+}
+
+.board {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
 }
 
 table,
 td,
 tr {
   border: 1px solid black;
-  width: 300px;
+  width: 180px;
   height: 80px;
   border-radius: 10px;
 }
 
 table {
   border: none;
+  margin-top: 20px;
 }
 
 td:hover {
@@ -133,6 +151,11 @@ td:hover {
   font-size: 1rem;
   padding: 5px;
   font-weight: 600;
+}
+
+.winner {
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 @keyframes wordAppear {

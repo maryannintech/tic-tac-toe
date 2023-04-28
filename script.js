@@ -2,6 +2,7 @@ const Player = (name, mark) => {
   const getName = () => name;
   const getMark = () => mark;
 
+  // to return the player's name and mark
   return {
     getName,
     getMark,
@@ -13,6 +14,7 @@ const GameBoard = (playerOne, playerTwo) => {
   const column = 3;
   let gameBoard = ["", "", "", "", "", "", "", "", ""];
 
+  // to assign the cell to the placement of array
   const renderGameBoard = (gameBoard) => {
     for (let i = 0; i < gameBoard.length; i++) {
       const cell = document.querySelector(`#cell-${i}`);
@@ -24,22 +26,27 @@ const GameBoard = (playerOne, playerTwo) => {
     const cells = document.querySelectorAll(".cell");
     cells.forEach((cell, index) => {
       cell.addEventListener("click", () => {
+        // if the clicked index is empty, the mark of the current player will be put there and to the dom
         if (gameBoard[index] === "") {
           gameBoard[index] = currentPlayer.getMark();
           console.log(currentPlayer.getMark());
           renderGameBoard(gameBoard);
+          // switch the current player to player one and vice versa
           currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
           // for debugging
           console.log(currentPlayer.getName(), currentPlayer.getMark());
           console.log(gameBoard);
+        } else {
+          // do nothing
         }
       });
     });
   };
 
   const checkWinner = (gameBoard) => {
-    // TODO: kung sino yung last na mark sila yung paano kaya icheck kung sino yung last mark na naka three lined
-    const winnerMessage = ``
+    // TODO: kung sino yung last na mark sila yung panalo kaya icheck kung sino yung last mark na naka three lined
+    const winnerAnnouncement = document.querySelector(".winner");
+    const winnerMessage = "is the winner!";
   };
 
   (function () {
