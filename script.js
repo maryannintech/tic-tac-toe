@@ -46,7 +46,7 @@ const GameBoard = (playerOne, playerTwo) => {
     const winnerAnnouncement = document.querySelector(".winner");
     const winnerMessage = "is the winner!";
     const player = name.getName();
-    gameFinish = true;
+
     // check rows
     if (
       gameBoard[0] === name.getMark() &&
