@@ -9,8 +9,8 @@
   --bg-body: #799698;
   --paper-bg: #ededed;
   --hover-color: #d6d6d6;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.50);
-  --box-shadow-inset: inset 0 4px 6px rgba(0, 0, 0, 0.50);
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  --box-shadow-inset: inset 0 4px 6px rgba(0, 0, 0, 0.5);
   --yellow-color: #fad643;
 }
 
@@ -129,7 +129,6 @@ input:valid {
   align-items: center;
   gap: 10px;
   width: fit-content;
-
 }
 
 table,
@@ -182,25 +181,6 @@ td:hover {
   100% {
     opacity: 1;
   }
-}
-
-@keyframes bubblingUp {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.5);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.bubble-word {
-  animation: bubblingUp 1s forwards;
 }
 
 .appear-word {
