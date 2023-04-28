@@ -9,7 +9,6 @@ const Player = (name, mark) => {
   };
 };
 
-let gameFinish = false;
 const GameBoard = (playerOne, playerTwo) => {
   const row = 3;
   const column = 3;
@@ -38,8 +37,6 @@ const GameBoard = (playerOne, playerTwo) => {
           // for debugging
           console.log(currentPlayer.getName(), currentPlayer.getMark());
           console.log(gameBoard);
-        } else if (gameFinish === true) {
-          cell.disabled = true;
         } else {
           // do nothing
         }
