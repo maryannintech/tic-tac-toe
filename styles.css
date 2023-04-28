@@ -11,6 +11,7 @@
   --hover-color: #d6d6d6;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.50);
   --box-shadow-inset: inset 0 4px 6px rgba(0, 0, 0, 0.50);
+  --yellow-color: #fad643;
 }
 
 .paper-bg {
@@ -37,6 +38,7 @@
 
 .holes-board {
   margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .circle {
@@ -60,7 +62,7 @@ header {
 }
 
 header p {
-  color: #fad643;
+  color: var(--yellow-color);
   font-weight: 600;
 }
 
@@ -119,6 +121,7 @@ input:valid {
   gap: 10px;
   margin: 15px;
   padding: 10px;
+  margin: 0;
 }
 
 .board {
@@ -126,6 +129,7 @@ input:valid {
   align-items: center;
   gap: 10px;
   width: fit-content;
+
 }
 
 table,
@@ -156,6 +160,7 @@ td:hover {
 .winner {
   font-weight: 700;
   font-size: 1rem;
+  color: #606c38;
 }
 
 @keyframes wordAppear {
