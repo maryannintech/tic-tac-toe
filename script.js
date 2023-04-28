@@ -9,6 +9,7 @@ const Player = (name, mark) => {
   };
 };
 
+let gameFinish = false;
 const GameBoard = (playerOne, playerTwo) => {
   const row = 3;
   const column = 3;
@@ -31,11 +32,14 @@ const GameBoard = (playerOne, playerTwo) => {
           gameBoard[index] = currentPlayer.getMark();
           console.log(currentPlayer.getMark());
           renderGameBoard(gameBoard);
+          checkWinner(currentPlayer, gameBoard);
           // switch the current player to player one and vice versa
           currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
           // for debugging
           console.log(currentPlayer.getName(), currentPlayer.getMark());
           console.log(gameBoard);
+        } else if (gameFinish === true) {
+          cell.disabled = true;
         } else {
           // do nothing
         }
@@ -43,10 +47,65 @@ const GameBoard = (playerOne, playerTwo) => {
     });
   };
 
-  const checkWinner = (gameBoard) => {
-    // TODO: kung sino yung last na mark sila yung panalo kaya icheck kung sino yung last mark na naka three lined
+  const checkWinner = (name, gameBoard) => {
     const winnerAnnouncement = document.querySelector(".winner");
     const winnerMessage = "is the winner!";
+    const player = name.getName();
+    gameFinish = true;
+    // check rows
+    if (
+      gameBoard[0] === name.getMark() &&
+      gameBoard[1] === name.getMark() &&
+      gameBoard[2] === name.getMark()
+    ) {
+      winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+    } else if (
+      gameBoard[3] === name.getMark() &&
+      gameBoard[4] === name.getMark() &&
+      gameBoard[5] === name.getMark()
+    ) {
+      winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+    } else if (
+      gameBoard[6] === name.getMark() &&
+      gameBoard[7] === name.getMark() &&
+      gameBoard[8] === name.getMark()
+    ) {
+      winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+    }
+    // check rows
+    else if (
+      gameBoard[0] === name.getMark() &&
+      gameBoard[3] === name.getMark() &&
+      gameBoard[6] === name.getMark()
+    ) {
+      winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+    } else if (
+      gameBoard[1] === name.getMark() &&
+      gameBoard[4] === name.getMark() &&
+      gameBoard[7] === name.getMark()
+    ) {
+      winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+    } else if (
+      gameBoard[2] === name.getMark() &&
+      gameBoard[5] === name.getMark() &&
+      gameBoard[8] === name.getMark()
+    ) {
+      winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+    }
+    // check diagonally
+    else if (
+      gameBoard[0] === name.getMark() &&
+      gameBoard[4] === name.getMark() &&
+      gameBoard[8] === name.getMark()
+    ) {
+      winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+    } else if (
+      gameBoard[2] === name.getMark() &&
+      gameBoard[4] === name.getMark() &&
+      gameBoard[6] === name.getMark()
+    ) {
+      winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+    }
   };
 
   (function () {
