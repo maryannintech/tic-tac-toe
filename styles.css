@@ -38,7 +38,7 @@
 
 .holes-board {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .circle {
@@ -161,6 +161,12 @@ td:hover {
   font-weight: 700;
   font-size: 1rem;
   color: #606c38;
+  margin: 0;
+}
+
+.againBtn {
+  margin: 0;
+  display: none;
 }
 
 @keyframes wordAppear {

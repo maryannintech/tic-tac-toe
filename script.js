@@ -45,6 +45,7 @@ const GameBoard = (playerOne, playerTwo) => {
   const checkWinner = (name, gameBoard) => {
     const winnerAnnouncement = document.querySelector(".winner");
     const winnerMessage = "is the winner!";
+    const playAgainBtn = document.querySelector(".againBtn");
     const player = name.getName();
 
     // check rows
@@ -54,18 +55,30 @@ const GameBoard = (playerOne, playerTwo) => {
       gameBoard[2] === name.getMark()
     ) {
       winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+      playAgainBtn.addEventListener("click", () => {
+        window.location.reload();
+      });
+      playAgainBtn.style.display = "block";
     } else if (
       gameBoard[3] === name.getMark() &&
       gameBoard[4] === name.getMark() &&
       gameBoard[5] === name.getMark()
     ) {
       winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+      playAgainBtn.addEventListener("click", () => {
+        window.location.reload();
+      });
+      playAgainBtn.style.display = "block";
     } else if (
       gameBoard[6] === name.getMark() &&
       gameBoard[7] === name.getMark() &&
       gameBoard[8] === name.getMark()
     ) {
       winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+      playAgainBtn.addEventListener("click", () => {
+        window.location.reload();
+      });
+      playAgainBtn.style.display = "block";
     }
     // check rows
     else if (
@@ -74,18 +87,30 @@ const GameBoard = (playerOne, playerTwo) => {
       gameBoard[6] === name.getMark()
     ) {
       winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+      playAgainBtn.addEventListener("click", () => {
+        window.location.reload();
+      });
+      playAgainBtn.style.display = "block";
     } else if (
       gameBoard[1] === name.getMark() &&
       gameBoard[4] === name.getMark() &&
       gameBoard[7] === name.getMark()
     ) {
       winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+      playAgainBtn.addEventListener("click", () => {
+        window.location.reload();
+      });
+      playAgainBtn.style.display = "block";
     } else if (
       gameBoard[2] === name.getMark() &&
       gameBoard[5] === name.getMark() &&
       gameBoard[8] === name.getMark()
     ) {
       winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+      playAgainBtn.addEventListener("click", () => {
+        window.location.reload();
+      });
+      playAgainBtn.style.display = "block";
     }
     // check diagonally
     else if (
@@ -94,12 +119,20 @@ const GameBoard = (playerOne, playerTwo) => {
       gameBoard[8] === name.getMark()
     ) {
       winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+      playAgainBtn.addEventListener("click", () => {
+        window.location.reload();
+      });
+      playAgainBtn.style.display = "block";
     } else if (
       gameBoard[2] === name.getMark() &&
       gameBoard[4] === name.getMark() &&
       gameBoard[6] === name.getMark()
     ) {
       winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+      playAgainBtn.addEventListener("click", () => {
+        window.location.reload();
+      });
+      playAgainBtn.style.display = "block";
     }
   };
 
