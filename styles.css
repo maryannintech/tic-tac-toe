@@ -167,6 +167,7 @@ td:hover {
 .againBtn {
   margin: 0;
   display: none;
+  padding: 2px 20px;
 }
 
 @keyframes wordAppear {

@@ -46,6 +46,7 @@ const GameBoard = (playerOne, playerTwo) => {
     const winnerMessage = "is the winner!";
     const playAgainBtn = document.querySelector(".againBtn");
     const player = name.getName();
+    let itsTie = true;
 
     // check rows
     if (
@@ -58,6 +59,7 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
+      itsTie = false;
     } else if (
       gameBoard[3] === name.getMark() &&
       gameBoard[4] === name.getMark() &&
@@ -68,6 +70,7 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
+      itsTie = false;
     } else if (
       gameBoard[6] === name.getMark() &&
       gameBoard[7] === name.getMark() &&
@@ -78,6 +81,7 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
+      itsTie = false;
     }
     // check rows
     else if (
@@ -90,6 +94,7 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
+      itsTie = false;
     } else if (
       gameBoard[1] === name.getMark() &&
       gameBoard[4] === name.getMark() &&
@@ -100,6 +105,7 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
+      itsTie = false;
     } else if (
       gameBoard[2] === name.getMark() &&
       gameBoard[5] === name.getMark() &&
@@ -110,6 +116,7 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
+      itsTie = false;
     }
     // check diagonally
     else if (
@@ -122,12 +129,21 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
+      itsTie = false;
     } else if (
       gameBoard[2] === name.getMark() &&
       gameBoard[4] === name.getMark() &&
       gameBoard[6] === name.getMark()
     ) {
       winnerAnnouncement.textContent = `${player} ${winnerMessage}`;
+      playAgainBtn.addEventListener("click", () => {
+        window.location.reload();
+      });
+      playAgainBtn.style.display = "block";
+      itsTie = false;
+    }
+    if (itsTie && gameBoard.every((cell) => cell !== "")) {
+      winnerAnnouncement.textContent = "It's a tie!";
       playAgainBtn.addEventListener("click", () => {
         window.location.reload();
       });
