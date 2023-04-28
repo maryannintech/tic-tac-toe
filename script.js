@@ -10,8 +10,6 @@ const Player = (name, mark) => {
 };
 
 const GameBoard = (playerOne, playerTwo) => {
-  const row = 3;
-  const column = 3;
   let gameBoard = ["", "", "", "", "", "", "", "", ""];
 
   // to assign the cell to the placement of array
