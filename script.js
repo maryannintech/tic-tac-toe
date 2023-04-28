@@ -27,7 +27,6 @@ const GameBoard = (playerOne, playerTwo) => {
         // if the clicked index is empty, the mark of the current player will be put there and to the dom
         if (gameBoard[index] === "") {
           gameBoard[index] = currentPlayer.getMark();
-          console.log(currentPlayer.getMark());
           renderGameBoard(gameBoard);
           checkWinner(currentPlayer, gameBoard);
           // switch the current player to player one and vice versa
