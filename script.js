@@ -46,7 +46,7 @@ const GameBoard = (playerOne, playerTwo) => {
     const winnerMessage = "is the winner!";
     const playAgainBtn = document.querySelector(".againBtn");
     const player = name.getName();
-    // to check with game is a tie
+    // to check if game is a tie
     let itsTie = true;
 
     // check rows
