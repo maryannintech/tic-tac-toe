@@ -46,6 +46,7 @@ const GameBoard = (playerOne, playerTwo) => {
     const winnerMessage = "is the winner!";
     const playAgainBtn = document.querySelector(".againBtn");
     const player = name.getName();
+    // to check with game is a tie
     let itsTie = true;
 
     // check rows
@@ -153,7 +154,7 @@ const GameBoard = (playerOne, playerTwo) => {
 
     // if the game is a tie
     else if (itsTie && gameBoard.every((cell) => cell !== "")) {
-      winnerAnnouncement.textContent = "It's a tie!";
+      winnerAnnouncement.textContent = "it's a tie!";
     }
   };
 
@@ -170,7 +171,7 @@ function fillEmptyCells(gameBoard, cells) {
       gameBoard[i] = ":)";
       cells[i].textContent = "game over";
       cells[i].style.fontWeight = 400;
-      cells[i].style.fontColor = "#540b0e";
+      cells[i].style.color = "#540b0e";
     }
   }
 }
