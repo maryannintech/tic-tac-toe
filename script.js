@@ -155,6 +155,10 @@ const GameBoard = (playerOne, playerTwo) => {
     // if the game is a tie
     else if (itsTie && gameBoard.every((cell) => cell !== "")) {
       winnerAnnouncement.textContent = "it's a tie!";
+      playAgainBtn.addEventListener("click", () => {
+        window.location.reload();
+      });
+      playAgainBtn.style.display = "block";
     }
   };
 
