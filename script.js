@@ -168,7 +168,7 @@ const GameBoard = (playerOne, playerTwo) => {
   })();
 };
 
-// prevent from player to click the cells when winner is announced
+// prevent player from clicking the cells when winner is announced
 function fillEmptyCells(gameBoard, cells) {
   for (let i = 0; i < gameBoard.length; i++) {
     if (gameBoard[i] === "") {
