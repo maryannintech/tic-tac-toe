@@ -153,11 +153,8 @@ const GameBoard = (playerOne, playerTwo) => {
 
     // if the game is a tie
     else if (itsTie && gameBoard.every((cell) => cell !== "")) {
-      winnerAnnouncement.textContent = "it's a tie!";
-      playAgainBtn.addEventListener("click", () => {
-        window.location.reload();
-      });
-      playAgainBtn.style.display = "block";
+      winnerAnnouncement.textContent = "It's a tie!";
+    }
   };
 
   (function () {
@@ -173,6 +170,7 @@ function fillEmptyCells(gameBoard, cells) {
       gameBoard[i] = ":)";
       cells[i].textContent = "game over";
       cells[i].style.fontWeight = 400;
+      cells[i].style.fontColor = "#540b0e";
     }
   }
 }
