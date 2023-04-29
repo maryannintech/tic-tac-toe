@@ -22,26 +22,23 @@ const GameBoard = (playerOne, playerTwo) => {
 
   const switchTurn = (currentPlayer, gameBoard) => {
     const cells = document.querySelectorAll(".cell");
-    cells.forEach((cell, index) => {
-      cell.addEventListener("click", () => {
-        // if the clicked index is empty, the mark of the current player will be put there and to the dom
-        if (gameBoard[index] === "") {
-          gameBoard[index] = currentPlayer.getMark();
-          renderGameBoard(gameBoard);
-          checkWinner(currentPlayer, gameBoard);
-          // switch the current player to player one and vice versa
-          currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
-          // for debugging
-          console.log(currentPlayer.getName(), currentPlayer.getMark());
-          console.log(gameBoard);
-        } else {
-          // do nothing
-        }
-      });
-    });
+    const handleClick = () => {
+      // if the clicked index is empty, the mark of the current player will be put there and to the dom
+      if (gameBoard[index] === "") {
+        gameBoard[index] = currentPlayer.getMark();
+        renderGameBoard(gameBoard);
+        checkWinner(currentPlayer, gameBoard, cells);
+        // switch the current player to player one and vice versa
+        currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
+        // for debugging
+        console.log(currentPlayer.getName(), currentPlayer.getMark());
+        console.log(gameBoard);
+      }
+      cells.addEventListener("click", handleClick);
+    };
   };
 
-  const checkWinner = (name, gameBoard) => {
+  const checkWinner = (name, gameBoard, cells) => {
     const winnerAnnouncement = document.querySelector(".winner");
     const winnerMessage = "is the winner!";
     const playAgainBtn = document.querySelector(".againBtn");
