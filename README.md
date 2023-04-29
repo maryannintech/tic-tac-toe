@@ -1,5 +1,4 @@
-# tic-tac-toe
+# Project: Tic-Tac-Toe
 
-Image by rawpixel.com on Freepik
-Hey! Remember you have to attribute Prosymbols
+### paper texture by rawpixel.com on Freepik and favicon from Prosymbols
  
