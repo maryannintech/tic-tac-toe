@@ -58,13 +58,6 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
-      document.querySelectorAll(".cell").forEach((cell, index) => {
-        if (gameBoard[index] === "") {
-          cell.textContent = ":)";
-          cell.disabled = true;
-        }
-      });
-      return true;
     } else if (
       gameBoard[3] === name.getMark() &&
       gameBoard[4] === name.getMark() &&
@@ -75,13 +68,6 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
-      document.querySelectorAll(".cell").forEach((cell, index) => {
-        if (gameBoard[index] === "") {
-          cell.textContent = ":)";
-          cell.disabled = true;
-        }
-      });
-      return true;
     } else if (
       gameBoard[6] === name.getMark() &&
       gameBoard[7] === name.getMark() &&
@@ -92,13 +78,6 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
-      document.querySelectorAll(".cell").forEach((cell, index) => {
-        if (gameBoard[index] === "") {
-          cell.textContent = ":)";
-          cell.disabled = true;
-        }
-      });
-      return true;
     }
     // check rows
     else if (
@@ -111,13 +90,6 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
-      document.querySelectorAll(".cell").forEach((cell, index) => {
-        if (gameBoard[index] === "") {
-          cell.textContent = ":)";
-          cell.disabled = true;
-        }
-      });
-      return true;
     } else if (
       gameBoard[1] === name.getMark() &&
       gameBoard[4] === name.getMark() &&
@@ -128,13 +100,6 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
-      document.querySelectorAll(".cell").forEach((cell, index) => {
-        if (gameBoard[index] === "") {
-          cell.textContent = ":)";
-          cell.disabled = true;
-        }
-      });
-      return true;
     } else if (
       gameBoard[2] === name.getMark() &&
       gameBoard[5] === name.getMark() &&
@@ -145,13 +110,6 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
-      document.querySelectorAll(".cell").forEach((cell, index) => {
-        if (gameBoard[index] === "") {
-          cell.textContent = ":)";
-          cell.disabled = true;
-        }
-      });
-      return true;
     }
     // check diagonally
     else if (
@@ -164,13 +122,6 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
-      document.querySelectorAll(".cell").forEach((cell, index) => {
-        if (gameBoard[index] === "") {
-          cell.textContent = ":)";
-          cell.disabled = true;
-        }
-      });
-      return true;
     } else if (
       gameBoard[2] === name.getMark() &&
       gameBoard[4] === name.getMark() &&
@@ -181,13 +132,6 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
-      document.querySelectorAll(".cell").forEach((cell, index) => {
-        if (gameBoard[index] === "") {
-          cell.textContent = ":)";
-          cell.disabled = true;
-        }
-      });
-      return true;
     }
   };
 
