@@ -87,7 +87,7 @@ const GameBoard = (playerOne, playerTwo) => {
       fillEmptyCells(gameBoard, cells);
       itsTie = false;
     }
-    // check rows
+    // check columns
     else if (
       gameBoard[0] === name.getMark() &&
       gameBoard[3] === name.getMark() &&
