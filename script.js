@@ -46,6 +46,7 @@ const GameBoard = (playerOne, playerTwo) => {
     const winnerMessage = "is the winner!";
     const playAgainBtn = document.querySelector(".againBtn");
     const player = name.getName();
+    let itsTie = true;
 
     // check rows
     if (
@@ -59,6 +60,7 @@ const GameBoard = (playerOne, playerTwo) => {
       });
       playAgainBtn.style.display = "block";
       fillEmptyCells(gameBoard, cells);
+      itsTie = false;
     } else if (
       gameBoard[3] === name.getMark() &&
       gameBoard[4] === name.getMark() &&
@@ -70,6 +72,7 @@ const GameBoard = (playerOne, playerTwo) => {
       });
       playAgainBtn.style.display = "block";
       fillEmptyCells(gameBoard, cells);
+      itsTie = false;
     } else if (
       gameBoard[6] === name.getMark() &&
       gameBoard[7] === name.getMark() &&
@@ -81,6 +84,7 @@ const GameBoard = (playerOne, playerTwo) => {
       });
       playAgainBtn.style.display = "block";
       fillEmptyCells(gameBoard, cells);
+      itsTie = false;
     }
     // check rows
     else if (
@@ -94,6 +98,7 @@ const GameBoard = (playerOne, playerTwo) => {
       });
       playAgainBtn.style.display = "block";
       fillEmptyCells(gameBoard, cells);
+      itsTie = false;
     } else if (
       gameBoard[1] === name.getMark() &&
       gameBoard[4] === name.getMark() &&
@@ -105,6 +110,7 @@ const GameBoard = (playerOne, playerTwo) => {
       });
       playAgainBtn.style.display = "block";
       fillEmptyCells(gameBoard, cells);
+      itsTie = false;
     } else if (
       gameBoard[2] === name.getMark() &&
       gameBoard[5] === name.getMark() &&
@@ -116,6 +122,7 @@ const GameBoard = (playerOne, playerTwo) => {
       });
       playAgainBtn.style.display = "block";
       fillEmptyCells(gameBoard, cells);
+      itsTie = false;
     }
     // check diagonally
     else if (
@@ -129,6 +136,7 @@ const GameBoard = (playerOne, playerTwo) => {
       });
       playAgainBtn.style.display = "block";
       fillEmptyCells(gameBoard, cells);
+      itsTie = false;
     } else if (
       gameBoard[2] === name.getMark() &&
       gameBoard[4] === name.getMark() &&
@@ -140,7 +148,16 @@ const GameBoard = (playerOne, playerTwo) => {
       });
       playAgainBtn.style.display = "block";
       fillEmptyCells(gameBoard, cells);
+      itsTie = false;
     }
+
+    // if the game is a tie
+    else if (itsTie && gameBoard.every((cell) => cell !== "")) {
+      winnerAnnouncement.textContent = "it's a tie!";
+      playAgainBtn.addEventListener("click", () => {
+        window.location.reload();
+      });
+      playAgainBtn.style.display = "block";
   };
 
   (function () {
@@ -155,6 +172,7 @@ function fillEmptyCells(gameBoard, cells) {
     if (gameBoard[i] === "") {
       gameBoard[i] = ":)";
       cells[i].textContent = "game over";
+      cells[i].style.fontWeight = 400;
     }
   }
 }
