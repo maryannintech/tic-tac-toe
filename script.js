@@ -28,7 +28,7 @@ const GameBoard = (playerOne, playerTwo) => {
         if (gameBoard[index] === "") {
           gameBoard[index] = currentPlayer.getMark();
           renderGameBoard(gameBoard);
-          checkWinner(currentPlayer, gameBoard);
+          checkWinner(currentPlayer, gameBoard, cells);
           // switch the current player to player one and vice versa
           currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
           // for debugging
@@ -41,7 +41,7 @@ const GameBoard = (playerOne, playerTwo) => {
     });
   };
 
-  const checkWinner = (name, gameBoard) => {
+  const checkWinner = (name, gameBoard, cells) => {
     const winnerAnnouncement = document.querySelector(".winner");
     const winnerMessage = "is the winner!";
     const playAgainBtn = document.querySelector(".againBtn");
@@ -58,6 +58,7 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
+      fillEmptyCells(gameBoard, cells);
     } else if (
       gameBoard[3] === name.getMark() &&
       gameBoard[4] === name.getMark() &&
@@ -68,6 +69,7 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
+      fillEmptyCells(gameBoard, cells);
     } else if (
       gameBoard[6] === name.getMark() &&
       gameBoard[7] === name.getMark() &&
@@ -78,6 +80,7 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
+      fillEmptyCells(gameBoard, cells);
     }
     // check rows
     else if (
@@ -90,6 +93,7 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
+      fillEmptyCells(gameBoard, cells);
     } else if (
       gameBoard[1] === name.getMark() &&
       gameBoard[4] === name.getMark() &&
@@ -100,6 +104,7 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
+      fillEmptyCells(gameBoard, cells);
     } else if (
       gameBoard[2] === name.getMark() &&
       gameBoard[5] === name.getMark() &&
@@ -110,6 +115,7 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
+      fillEmptyCells(gameBoard, cells);
     }
     // check diagonally
     else if (
@@ -122,6 +128,7 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
+      fillEmptyCells(gameBoard, cells);
     } else if (
       gameBoard[2] === name.getMark() &&
       gameBoard[4] === name.getMark() &&
@@ -132,6 +139,7 @@ const GameBoard = (playerOne, playerTwo) => {
         window.location.reload();
       });
       playAgainBtn.style.display = "block";
+      fillEmptyCells(gameBoard, cells);
     }
   };
 
@@ -140,6 +148,16 @@ const GameBoard = (playerOne, playerTwo) => {
     switchTurn(playerTwo, gameBoard);
   })();
 };
+
+// prevent from player to click the cells when winner is announced
+function fillEmptyCells(gameBoard, cells) {
+  for (let i = 0; i < gameBoard.length; i++) {
+    if (gameBoard[i] === "") {
+      gameBoard[i] = ":)";
+      cells[i].textContent = "game over";
+    }
+  }
+}
 
 // dom elements
 const startScreen = document.querySelector(".start-screen");
